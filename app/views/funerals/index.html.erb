@@ -1,0 +1,39 @@
+<h1>Listing funerals</h1>
+
+<table>
+  <tr>
+    <th>Funeral pref</th>
+    <th>Casket pref</th>
+    <th>Service location</th>
+    <th>Burial location</th>
+    <th>Ashes location</th>
+    <th>Hymns pref</th>
+    <th>Readings</th>
+    <th>Speakers</th>
+    <th>Final words</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @funerals.each do |funeral| %>
+  <tr>
+    <td><%= funeral.funeral_pref %></td>
+    <td><%= funeral.casket_pref %></td>
+    <td><%= funeral.service_location %></td>
+    <td><%= funeral.burial_location %></td>
+    <td><%= funeral.ashes_location %></td>
+    <td><%= funeral.hymns_pref %></td>
+    <td><%= funeral.readings %></td>
+    <td><%= funeral.speakers %></td>
+    <td><%= funeral.final_words %></td>
+    <td><%= link_to 'Show', funeral %></td>
+    <td><%= link_to 'Edit', edit_funeral_path(funeral) %></td>
+    <td><%= link_to 'Destroy', funeral, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Funeral', new_funeral_path %>

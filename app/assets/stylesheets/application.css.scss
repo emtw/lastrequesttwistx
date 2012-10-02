@@ -1,0 +1,143 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+body {
+  background-image:url('background.png');
+  background-repeat:repeat;
+  padding:0px;
+  margin:0px;
+}
+
+#blackbox {
+  width:100%;
+  height:150px;
+  background-color:#000;
+  border-bottom:3px solid #fff;
+  color:#fff;
+  
+}
+
+#wrapper {
+  width:920px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+#navbar {
+  margin-top:-75px;
+  width:900px;
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
+  height:150px;
+  background-color:#000;
+  border:7px solid #fff;
+  color:#fff;
+  border-radius:10px;
+  #nav {
+    text-align:left;
+  }
+  
+  h1 {
+    float:left;
+    margin-left:40px;
+    margin-top:70px;
+  }
+  
+  a {
+    color:#fff;
+  }
+  
+  .hmenu {
+    float:right;
+    margin-right:10px;
+    li {
+      float:right;
+      list-style-type:none;
+    }
+    p {
+      clear:both;
+    }
+  }
+}
+
+.notice {
+  width:900px;
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
+  margin-top:20px;
+  background-color:#b9eac0;
+  border:1px solid #008000;
+  padding-left:10px;
+  color:#008000;
+  border-radius:10px;
+  p {
+    text-align:left;
+  }
+}
+
+#index-left {
+  margin-top:30px;
+  margin-left:50px;
+  width:350px;
+  float:left;
+  img {
+    border-radius:20px;
+    padding:10px;
+    height:189px;
+  }
+  #left-info{
+    background-color:#fff;
+    border-radius:20px;
+    width:310px;
+    margin-left:10px;
+    padding:10px;
+    margin-top:10px;
+  }
+}
+
+#index-right{
+  margin-top:40px;
+  margin-right:50px;
+  float:right;
+  width:450px;
+  #login-box {
+    background-color:#fff;
+    border-radius:20px;
+    padding:10px;
+    height:169px;
+  }
+  #sample-box {
+    background-color:#fff;
+    border-radius:20px;
+    padding:10px;
+    height:300px;
+    margin-top:24px;
+  }
+}
+
+#footer{
+  margin-top:30px;
+  clear:both;
+  width:880px;
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
+  border:2px solid #000;
+  border-radius:10px;
+  background-color:#fff;
+  height:50px;
+  padding:10px;
+}

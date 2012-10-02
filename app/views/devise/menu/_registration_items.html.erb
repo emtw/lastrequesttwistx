@@ -1,0 +1,6 @@
+<% if user_signed_in? %>
+<% else %>
+  <li>
+  <%= link_to('Register', new_user_registration_path)  %>
+  </li>
+<% end %>

@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  funeral_pref: MyString
+  casket_pref: MyText
+  service_location: MyString
+  burial_location: MyString
+  ashes_location: MyString
+  hymns_pref: MyText
+  readings: MyText
+  speakers: MyText
+  final_words: MyText
+  user_id: 1
+
+two:
+  funeral_pref: MyString
+  casket_pref: MyText
+  service_location: MyString
+  burial_location: MyString
+  ashes_location: MyString
+  hymns_pref: MyText
+  readings: MyText
+  speakers: MyText
+  final_words: MyText
+  user_id: 1
