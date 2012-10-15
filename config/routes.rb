@@ -1,14 +1,32 @@
 LastRequest::Application.routes.draw do
   
+  resources :events do
+    member do
+      get 'myevents'
+    end
+  end
+
+  resources :timelines
+
   resources :funerals
 
   devise_for :admins
 
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "registrations" }
 
-  resources :users
+  devise_for :users 
+
+  resources :users do
+    member do
+      get 'myaccount'
+    end
+  end
   
   resources :admins
+  
+  match 'users/:id/events' => 'events#myevents'
+  
+  match '/index', :to => redirect('/index.html.erb')
   
   root :to => "public#index"
 

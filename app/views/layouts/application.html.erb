@@ -5,6 +5,26 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <!-- BEGIN TimelineJS -->
+  <% if user_signed_in? %>
+  <%= javascript_include_tag "/js/storyjs-embed.js" %>
+        <script>
+            $(document).ready(function() {
+                createStoryJS({
+                    type:       'timeline',
+                    width:      '820',
+                    height:     '600',
+                    source:     '/users/<%= current_user.id %>/events.json?callback',
+                    embed_id:   'my-timeline',
+                    font: 		'Euphoria-Droid',
+                    debug:		true,
+                    gmap_key:	'AIzaSyDCock8UhY8IC5uEhxYCn6bUN9FQY2g0T4',
+                    maptype:	'HYBRID'
+                });
+            });
+        </script>
+        <!-- END TimelineJS -->
+  <% end %>
 </head>
 <body>
 <div id="blackbox">&nbsp;</div>
@@ -14,16 +34,19 @@
 		<ul class="hmenu">
   			<%= render 'partials/menu' %>
 		</ul>
-		<h1>Last Request</h1>
+		<h1><%= link_to 'Last Request', root_url %></h1>
 		</div>
 	</div>
+	<% if user_signed_in? %>
+		<div id="menuoptions">
+			<%= render 'partials/menuoptions' %>
+		</div><br /><br />
+	<% end %>
 <% if flash[:notice] %>
     <div class="notice"><p><%= flash[:notice] %></p></div>
 <% end %>
 
-<div id="content-box">
-<%= yield %>
-</div>
+	<%= yield %>
 </div>
 </body>
 </html>

@@ -4,13 +4,11 @@
   </li>
 <% else %>
   <li>
-  <%= link_to('Login', new_user_session_path)  %>  
+  	<%= link_to('Register', new_user_registration_path)  %>
   </li>
-<% end %>
-<% if user_signed_in? %>
-<% else %>
+  <li>&nbsp;or&nbsp;</li>
   <li>
-  <%= link_to('Register', new_user_registration_path)  %>
+  	<%= link_to('Login', new_user_session_path)  %> 
   </li>
 <% end %>
 <% if current_user.try(:admin?) %>

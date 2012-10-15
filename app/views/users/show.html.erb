@@ -1,5 +1,5 @@
-<p id="notice"><%= notice %></p>
-
+<div class="content-box">
+<h1>My Details</h1>
 <p>
   <b>First name:</b>
   <%= @user.first_name %>
@@ -17,7 +17,7 @@
 
 <p>
   <b>Date of birth:</b>
-  <%= @user.date_of_birth %>
+  <%= @user.date_of_birth.strftime("%d %B %Y") %>
 </p>
 
 <p>
@@ -61,5 +61,7 @@
 </p>
 
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Edit', edit_user_registration_path(@user) %> |
+<%= link_to 'Home', root_url %>
+
+</div>

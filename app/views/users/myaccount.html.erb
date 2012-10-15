@@ -1,0 +1,33 @@
+<div id="user-left">
+	<h2>My Account</h2>
+	<ul>
+		<li><%= link_to 'My Details', :controller => "users", :action => "show", :id => current_user.id %></li>
+		<li><%= link_to 'Funeral Plans', 
+  			current_user.funeral.present? ? 
+    		funeral_path(current_user.funeral) : 
+    		new_funeral_path %></li>
+    	<li><%= link_to 'My Timeline', 
+      		current_user.timeline.present? ? 
+        	timeline_path(current_user.timeline) : 
+        	new_timeline_path %></li>
+	</ul>
+	
+	<h2>Help</h2>
+	<ul>
+		<li><%= link_to 'FAQ', "#" %></li>
+		<li><%= link_to 'Contact Us', "#" %></li>
+		<li><%= link_to 'Remove Account', "#" %></li>
+	</ul>
+</div>
+<div id="user-right">
+	<h1>Where do you want to go...?</h1><br />
+	<p>This is the area where you can put all of your ideas - specify what you might like for your funeral, write letters for your loved ones and anything else that you want to document.</p>
+	<p>Use the links on the left or above to create or edit your plans, or choose from the handy shortcuts below.</p>
+	<h3>Useful links:</h3>
+	<ul>
+	<li><%= link_to 'Create or edit your funeral plans', 
+  			current_user.funeral.present? ? 
+    		funeral_path(current_user.funeral) : 
+    		new_funeral_path %></li>
+    <li><%= link_to 'Write letters for your loved ones', "#" %></li>
+</div>

@@ -1,0 +1,59 @@
+<script>
+	$(document).ready(function(){
+	$('#new-event-button').click(function(e){
+		e.preventDefault();
+		$('#edit-events').hide();
+		$('#delete-events').hide();
+		$('#new-event').slideDown(function(){
+			$('html, body').animate({
+			scrollTop: $(document).height()-$(window).height()},200,"linear"
+			);
+		});
+	});
+	$('#edit-events-button').click(function(e){
+		e.preventDefault();
+		$('#new-event').hide();
+		$('#delete-events').hide();
+		$('#edit-events').slideDown(function(){
+			$('html, body').animate({
+			scrollTop: $(document).height()-$(window).height()},200,"linear"
+			);
+		});
+	});
+	$('#delete-events-button').click(function(e){
+		e.preventDefault();
+		$('#new-event').hide();
+		$('#edit-events').hide();
+		$('#delete-events').slideDown(function(){
+			$('html, body').animate({
+			scrollTop: $(document).height()-$(window).height()},200,"linear"
+			);
+		});
+	});
+});
+
+</script>
+
+<div class="content-box timeline-box">
+<div id="my-timeline"></div><br /><br />
+<br />
+
+<button id="new-event-button" class="btn btn-success btn-large">New Event</button>
+<button id="edit-events-button" class="btn btn-info btn-large">Edit Events</button>
+<button id="delete-events-button" class="btn btn-danger btn-large">Delete Events</button>
+
+<div id="events-forms">
+	<div id="new-event">
+		<%= render :partial => "new_event", :locals => { :event => Event.new(:timeline_id=>@timeline.id) } %>
+	</div>
+
+	<div id="edit-events">
+		<%= render :partial => "edit_events", :locals => { :events => current_user.events } %>	
+	</div>
+
+	<div id="delete-events">
+		<%= render :partial => "delete_events", :locals => { :events => current_user.events } %>		
+	</div>
+</div>
+
+</div>

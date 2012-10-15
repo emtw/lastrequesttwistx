@@ -1,28 +1,38 @@
-<p id="notice"><%= notice %></p>
-
+<div class="content-box">
 <p>
-  <b>Funeral pref:</b>
+  <b>Funeral preference:</b>
   <%= @funeral.funeral_pref %>
 </p>
 
+<% if @funeral.funeral_pref == "Other" %>
+	<p>
+  		<b>Other preference:</b>
+  		<%= @funeral.other_pref %>
+	</p>
+<% end %>
+
+<% if @funeral.funeral_pref == "Burial" %>
 <p>
-  <b>Casket pref:</b>
+  <b>Burial location:</b>
+  <%= @funeral.burial_location %>
+</p>
+<% end %>
+
+<% if @funeral.funeral_pref == "Cremation" %>
+<p>
+  <b>Ashes location:</b>
+  <%= @funeral.ashes_location %>
+</p>
+<% end %>
+
+<p>
+  <b>Casket preference:</b>
   <%= @funeral.casket_pref %>
 </p>
 
 <p>
   <b>Service location:</b>
   <%= @funeral.service_location %>
-</p>
-
-<p>
-  <b>Burial location:</b>
-  <%= @funeral.burial_location %>
-</p>
-
-<p>
-  <b>Ashes location:</b>
-  <%= @funeral.ashes_location %>
 </p>
 
 <p>
@@ -45,6 +55,36 @@
   <%= @funeral.final_words %>
 </p>
 
+<p>
+  <b>Dress Code:</b>
+  <%= @funeral.dress_code %>
+</p>
+
+<p>
+  <b>Flowers:</b>
+  <%= @funeral.flowers %>
+</p>
+
+<p>
+  <b>Donations To:</b>
+  <%= @funeral.donations_to %>
+</p>
+
+<p>
+  <b>Wake:</b>
+  <%= @funeral.wake %>
+</p>
+
+<p>
+  <b>Epitaph:</b>
+  <%= @funeral.epitaph %>
+</p>
+
+<p>
+  <b>Additional Requirements:</b>
+  <%= @funeral.additional_requirements %>
+</p>
 
 <%= link_to 'Edit', edit_funeral_path(@funeral) %> |
-<%= link_to 'Back', funerals_path %>
+<%= link_to 'My Account', :controller => "users", :action => "myaccount", :id => current_user.id %>
+</div>

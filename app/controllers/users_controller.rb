@@ -21,6 +21,15 @@ class UsersController < ApplicationController
       format.json { render json: @user }
     end
   end
+  
+  def myaccount
+    @user = User.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @user }
+    end
+  end
 
   # GET /users/new
   # GET /users/new.json

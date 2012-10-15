@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121001130233) do
+ActiveRecord::Schema.define(:version => 20121015162207) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -39,6 +39,20 @@ ActiveRecord::Schema.define(:version => 20121001130233) do
   add_index "admins", ["email"], :name => "index_admins_on_email", :unique => true
   add_index "admins", ["reset_password_token"], :name => "index_admins_on_reset_password_token", :unique => true
 
+  create_table "events", :force => true do |t|
+    t.integer  "timeline_id"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.text     "headline"
+    t.text     "text"
+    t.text     "media"
+    t.text     "thumbnail"
+    t.text     "credit"
+    t.text     "caption"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "funerals", :force => true do |t|
     t.string   "funeral_pref"
     t.text     "casket_pref"
@@ -50,15 +64,29 @@ ActiveRecord::Schema.define(:version => 20121001130233) do
     t.text     "speakers"
     t.text     "final_words"
     t.integer  "user_id"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+    t.string   "dress_code"
+    t.string   "flowers"
+    t.string   "donations_to"
+    t.text     "wake"
+    t.text     "epitaph"
+    t.text     "additional_requirements"
+    t.string   "other_pref"
+  end
+
+  create_table "timelines", :force => true do |t|
+    t.integer  "event_id"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
     t.string   "first_name"
     t.string   "middle_names"
     t.string   "last_name"
-    t.datetime "date_of_birth"
+    t.date     "date_of_birth"
     t.string   "gender"
     t.string   "email"
     t.string   "address_1"

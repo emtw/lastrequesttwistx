@@ -5,7 +5,9 @@ gem 'rails', '3.2.4.rc1'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'pg'
+gem 'sqlite3'
+gem 'json_builder'
+gem 'will_paginate', '~>3.0'
 
 
 # Gems used only for assets and not required
@@ -24,11 +26,15 @@ gem 'jquery-rails'
 
 gem 'devise'
 
+group :production do
+  gem "pg"
+end
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
-# gem 'jbuilder'
+gem 'jbuilder'
 
 # Use unicorn as the app server
 # gem 'unicorn'
